@@ -1,0 +1,38 @@
+@using login_registration.Models
+@model User
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            h1, h6 {
+                text-align: center;
+                margin: 20px;
+            }
+            body {
+                background-color: #eff5ff;
+            }
+        </style>
+    </head>
+<body>
+    <h1>Login to this Cool Site!</h1>
+    <h6><a href="/" class="login">Register</a></h6>
+
+<form asp-action="login" asp-controller="Home" method="POST">
+  <div class="form-group col-md-6 mx-auto">
+    <label for="exampleInputEmail1">Email</label>
+    <span asp-validation-for="email"></span>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" asp-for="email">
+  </div>
+  <div class="form-group col-md-6 mx-auto">
+    <label for="exampleInputPassword1">Password</label>
+    <span asp-validation-for="password"></span>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" asp-for="password">
+    <button type="submit" class="btn btn-dark">Submit</button>
+  </div>
+
+</form>
+
+</body>
+
+</html>
